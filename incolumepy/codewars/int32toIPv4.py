@@ -32,24 +32,16 @@ def tratativa(int32: int):
 
 
 def int32_to_ip(int32: int):
-    if not int32:
-        return '0.0.0.0'
-    num = f'{int32:#b}'
-    ip = []
-    ii = 2
-    il = ii + 8
-    try:
-        while ii < len(num) - 2:
-            ip.append(num[ii:il])
-            ii += 8
-            il += 8
-    except:
-        raise
+    num = f'{int32:#b}'[2:]
+    num = f'{num:0>32}'
+    ip = num[:8], num[8: 16], num[16: 24], num[24:]
+    print(len(num), num, ip)
     return '.'.join([f"{int(x, 2)}" for x in ip])
 
 
 if __name__ == '__main__':
     # print(int32_to_ip(2149583361))
     # print(int32_to_ip(2154959208))
-    print(tratativa(0))
-    print(tratativa(1820103483))
+    # print(tratativa(0))
+    # print(tratativa(1820103483))
+    int32_to_ip(1820103483)
