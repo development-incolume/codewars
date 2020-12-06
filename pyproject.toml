@@ -6,6 +6,24 @@ authors = ["britodfbr <britodfbr@gmail.com>"]
 packages = [
     { include = "incolumepy" },
 ]
+
+readme = "README.md"
+
+homepage = "https://github.com/johnfraney/flake8-markdown"
+
+repository = "https://github.com/johnfraney/flake8-markdown"
+
+keywords = ["codewars", ""]
+
+classifiers = [
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Topic :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Environment :: Console",
+]
+
 [tool.poetry.dependencies]
 python = "^3.6"
 

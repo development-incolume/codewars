@@ -5,7 +5,12 @@ __author__ = '@britodfbr'
 import re
 
 
-def increment_string(strng):
+def increment_string(strng) -> None:
+    """
+    adfafadsfasdfasdfadsf
+    :param strng: String entrance
+    :return: Nothing
+    """
     if strng:
         base = ''.join([x for x in strng if x.isalpha()])
         try:
@@ -17,3 +22,4 @@ def increment_string(strng):
         return '1'
 
 
+increment_string()
