@@ -5,14 +5,16 @@ from functools import lru_cache
 import time
 
 
-def productFib(prod):
+@lru_cache(maxsize=64)
+def fib(n):
+    # 1, 1, 2, 3, 5, ..
     @lru_cache(maxsize=64)
     def fib(n):
         if n < 2:
             return n
         return fib(n-1) + fib(n-2)
 
-    # return fib(6)
+def productFib(prod):
     mult = 0
     v = 0
     while mult < prod:
