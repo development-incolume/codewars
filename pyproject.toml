@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "incolumepy.codewars"
 version = "0.1.1-alpha.3"
-description = "Code wars codes"
+description = "Code wars implementation"
 authors = ["britodfbr <britodfbr@gmail.com>"]
 packages = [
     { include = "incolumepy" },
@@ -9,9 +9,9 @@ packages = [
 
 readme = "README.md"
 
-homepage = "https://github.com/johnfraney/flake8-markdown"
+homepage = "https://github.com/incolumepy/codewars"
 
-repository = "https://github.com/johnfraney/flake8-markdown"
+repository = "git@github.com:incolumepy/codewars.git"
 
 keywords = ["codewars", ""]
 
