@@ -9,10 +9,5 @@ def increment_string(s: str):
     digits = len(''.join(x for x in s if x.isdigit()))
     strout = '{}{:0>%d}' % digits
     num = int(number) + 1
-    result = '{}{}'.format(base, num)
-    # result = f'{base}{num:0>%d}' % digits     # Fail
     result = strout.format(base, num)
-
-    print(f'''entrada: {base}, {number}, {digits}''')
-    print(f'''saída: {base}, {num}''')
     return result
