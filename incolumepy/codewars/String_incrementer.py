@@ -1,13 +1,20 @@
 # /bin/env python
 # -*- encode: utf-8 -*-
+import re
+
 __author__ = '@britodfbr'
 
 
 def increment_string(s: str):
-    base = ''.join(x for x in s if x.isalpha())
-    number = ''.join(x for x in s if x.isdigit()) or 0
-    digits = len(''.join(x for x in s if x.isdigit()))
-    strout = '{}{:0>%d}' % digits
-    num = int(number) + 1
-    result = strout.format(base, num)
-    return result
+    regex = r'(.+)(\d+)'
+    matches = re.compile(regex).search(s)
+    if matches:
+        print(matches.groups())
+    # base = matches.group(0)
+    # number = matches.group(1) or 0
+    # digits = len(number)
+    # print(matches.groups(), base, number, digits)
+    # strout = '{}{:0>%d}' % digits
+    # num = int(number) + 1
+    # result = strout.format(base, num)
+    # return result
