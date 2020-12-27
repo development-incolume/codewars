@@ -6,7 +6,7 @@ __author__ = '@britodfbr'
 
 
 def increment_string(s: str):
-    regex = r'(\w+)(\d+)'
+    regex = r'([a-z\W]+)(\d+)'
     matches = re.compile(regex).search(s)
     if matches:
         print(matches.groups())
@@ -18,4 +18,4 @@ def increment_string(s: str):
     num = int(number) + 1
     result = strout.format(base, num)
     print(result)
-    # return result
+    return result
