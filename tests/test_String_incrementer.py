@@ -12,6 +12,9 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(increment_string("foobar099"), "foobar100")
         self.assertEqual(increment_string(""), "1")
 
+    def test_avanceds(self):
+        self.assertEqual(increment_string("q.~2871332009"), "q.~2871332010")
+
 
 if __name__ == '__main__':
     unittest.main()
