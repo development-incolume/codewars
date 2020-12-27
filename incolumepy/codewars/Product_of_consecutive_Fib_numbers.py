@@ -8,11 +8,7 @@ import time
 @lru_cache(maxsize=64)
 def fib(n):
     # 1, 1, 2, 3, 5, ..
-    if n < 0:
-        raise ValueError("n < 0")
-    if n == 0:
-        return 1
-    elif n < 2:
+    if n < 2:
         return n
     return fib(n-1) + fib(n-2)
 
