@@ -9,7 +9,7 @@ import time
 def fib(n):
     # 1, 1, 2, 3, 5, ..
     if n < 2:
-        return 1
+        return n
     return fib(n-1) + fib(n-2)
 
 
