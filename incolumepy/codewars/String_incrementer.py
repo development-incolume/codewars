@@ -5,21 +5,22 @@ import re
 
 
 def increment_string(s: str):
-    regex = r'([a-z\W]+)(\d+)'
+    if not s:
+        return "1"
+    regex = r'([a-z\W]+)(\d+)?'
     matches = re.compile(regex).search(s)
-
-    print(f'{s}:{matches.groups()}, {matches.group(0)}, {matches.group(1)}, {matches.group(2)}')
-    base = matches.group(1)
-    number = matches.group(2)
+    print(f'1.. {s}:{matches.groups()}, {matches.group(0)}, {matches.group(1)}, {matches.group(2)}')
+    base = matches.group(1) or ""
+    number = matches.group(2) or '0'
     digits = len(number)
-    print(f'{s}: {base}, {matches.groups()}, {number}, {digits}')
+    print(f'2.. {s}: {base}, {matches.groups()}, {number}, {digits}')
     strout = '{}{:0>%d}' % digits
     num = int(number) + 1
     result = strout.format(base, num)
-    print(result)
+    print(f'3.. {result}')
     return result
 
 
 if __name__ == '__main__':
     print(increment_string('asdfg01'))
-    print(increment_string('g.~1234567890'))
+    print(increment_string('g.~0123456789'))
