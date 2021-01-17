@@ -9,7 +9,7 @@ def increment_string(s: str):
         return "1"
     elif s.isdigit():
         return f"{int(s) + 1}"
-    regex = r'([a-z\W]+)(\d+)?'
+    regex = r'(.+)(\d+)$'
     matches = re.compile(regex).search(s)
     print(f'1.. {s}:{matches.groups()}, {matches.group(0)}, {matches.group(1)}, {matches.group(2)}')
     base = matches.group(1) or ""
