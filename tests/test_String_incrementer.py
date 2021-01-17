@@ -14,6 +14,10 @@ class MyTestCase(unittest.TestCase):
 
     def test_avanceds(self):
         self.assertEqual(increment_string("q.~2871332009"), "q.~2871332010")
+        self.assertEqual(increment_string(None), '1')
+        self.assertEqual(increment_string('1'), '2')
+        self.assertEqual(increment_string('J.Z9l07816203>^jEG{|jb839460@s_ Cm"9550009'),
+                         'J.Z9l07816203>^jEG{|jb839460@s_ Cm"9550010')
 
 
 if __name__ == '__main__':
