@@ -9,15 +9,21 @@ def increment_string(s: str):
         return "1"
     regex = r'([a-z\W]+)(\d+)?'
     matches = re.compile(regex).search(s)
-    print(f'1.. {s}:{matches.groups()}, {matches.group(0)}, {matches.group(1)}, {matches.group(2)}')
-    base = matches.group(1) or ""
-    number = matches.group(2) or '0'
+    # print(f'1.. {s}:{matches.groups()}, {matches.group(0)}, {matches.group(1)}, {matches.group(2)}')
+    try:
+        base = matches.group(1)
+    except AttributeError:
+        base = ""
+    try:
+        number = matches.group(2)
+    except AttributeError:
+        number = s if s.isdigit() else "0"
     digits = len(number)
-    print(f'2.. {s}: {base}, {matches.groups()}, {number}, {digits}')
+    # print(f'2.. {s}: {base}, {matches.groups()}, {number}, {digits}')
     strout = '{}{:0>%d}' % digits
     num = int(number) + 1
     result = strout.format(base, num)
-    print(f'3.. {result}')
+    # print(f'3.. {result}')
     return result
 
 
