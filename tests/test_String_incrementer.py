@@ -1,5 +1,6 @@
 import unittest
 from incolumepy.codewars.String_incrementer import increment_string
+from collections import namedtuple
 
 
 class MyTestCase(unittest.TestCase):
@@ -24,15 +25,17 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(increment_string("q.~2871332009"), "q.~2871332010")
 
     def test_advanced4(self):
-        self.assertEqual(
-            increment_string('J.Z9l07816203>^jEG{|jb839460@s_ Cm"9550009'),
-            'J.Z9l07816203>^jEG{|jb839460@s_ Cm"9550010')
-
-    def test_advanced5(self):
-        self.assertEqual(
-            increment_string("qE7yOPr!71726313\"0/:.(H1.#R3066`^'Nz[r>t4186675470008615188699"),
-            'qE7yOPr!71726313"0/:.(H1.#R3066`^\'Nz[r>t4186675470008615188700'
-        )
+        t = namedtuple('test', 'entrance expected')
+        tests = [
+            t('J.Z9l07816203>^jEG{|jb839460@s_ Cm"9550009', 'J.Z9l07816203>^jEG{|jb839460@s_ Cm"9550010'),
+            t('"4On}Mb0077150000282689', '"4On}Mb0077150000282690'),
+            t('.%~h9087Yv~3t3<<424371 5AA~b?94j&y022527500000000359',
+              '.%~h9087Yv~3t3<<424371 5AA~b?94j&y022527500000000360'),
+            t("qE7yOPr!71726313\"0/:.(H1.#R3066`^'Nz[r>t4186675470008615188699",
+              "qE7yOPr!71726313\"0/:.(H1.#R3066`^'Nz[r>t4186675470008615188700"),
+        ]
+        for i in tests:
+            self.assertEqual(increment_string(i.entrance), i.expected)
 
 
 if __name__ == '__main__':
