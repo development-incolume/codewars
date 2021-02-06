@@ -1,8 +1,12 @@
 import unittest
+from collections import namedtuple
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)
+
+class BaseTestCase(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.t = namedtuple('test', 'entrance expected')
+
 
 if __name__ == '__main__':
     unittest.main()
