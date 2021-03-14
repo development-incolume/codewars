@@ -1,6 +1,7 @@
 import unittest
 from incolumepy.codewars.firstnotrepeatcharacter import first_non_repeating_letter
 
+
 class MyTestCase(unittest.TestCase):
     def test_1(self):
         """should handle simple tests"""
